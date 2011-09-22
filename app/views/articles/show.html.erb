@@ -12,7 +12,7 @@
 
 <p class='tag_list'><em>Tagged:</em> <%= @article.tag_list %></p>
 
-<h3>Comments <span class='comment_count'>(<%= @article.comments.count %>)</span></h3>
+<h3><%= pluralize @article.comments.count, "Comment" %></h3>
 
 <% @article.comments.each do |comment| %>
   <div class='comment'>
