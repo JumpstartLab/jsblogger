@@ -10,6 +10,13 @@ group :development, :test do
   gem 'capybara'
   # gem 'faker'
   # gem 'fabrication'  
+  # gem 'capybara'
+  gem 'faker'
+  gem 'fabrication' 
+  gem "cover_me"
+  gem "metric_fu" 
+  gem "fattr"
+  gem "arrayfields"
 
   # Styling:
   gem 'compass', '0.11.5'
