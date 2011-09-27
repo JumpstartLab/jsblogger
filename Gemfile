@@ -7,7 +7,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 group :development, :test do
   # Testing:
   gem 'rspec-rails'
-  # gem 'capybara'
+  gem 'capybara'
   # gem 'faker'
   # gem 'fabrication'  
 

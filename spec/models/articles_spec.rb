@@ -5,6 +5,15 @@ describe Article do
     @article = Article.new(:title => "Hello, World", 
                            :body => "Sample Body.")
   end
+  subject {@article}
+
+  context "#some_instance_method" do
+    before(:each) do
+      puts "I'm in the context"
+    end
+    
+    it{ should respond_to(:body) }
+  end
 
   it "is not valid without a title" do
     @article.title = nil
