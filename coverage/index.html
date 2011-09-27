@@ -1,0 +1,234 @@
+<html>
+  <head>
+    <title>Coverage Report</title>
+    <link href="report.css?0.36130677823991053" media="screen" rel="stylesheet" type="text/css" />
+    <link href="index.css?0.7529937704698751" media="screen" rel="stylesheet" type="text/css" />
+    <script src="jquery.js?0.43228672890146"></script>
+    <script src="jquery.tablesorter.js?0.791409304115919"></script>
+    <script>
+      $(function() {
+        
+        function filterByPercent() {
+          var p = $('#filter_by_percent').val();
+          if (p == 0 ) {
+            $('#main tbody tr').show();
+          } else if (p == 10) {
+            $('#main tbody tr.row').show();
+            $('#main tbody tr.10').hide();
+          } else if (p == 100) {
+            $('#main tbody tr.row').hide();
+            $('#main tbody tr.10').show();
+          } else {
+            $('#main tbody tr.row').hide();
+            var x = 0;
+            while (x < p) {
+              $('#main tbody tr.' + x).show();
+              x++;
+            }
+          }
+        }
+        
+        function filterByName(name) {
+          $('#main tbody tr:visible').each(function() {
+            if ($(this).attr('id').indexOf(name) != -1) {
+              $(this).show();
+            } else {
+              $(this).hide();
+            }
+          });
+        }
+        
+        $('#filter_by_percent').change(function(e) {
+          filterByPercent();
+          filterByName($('#filter_by_name').val());
+        });
+      
+        $('#filter_by_name').keyup(function(e) {
+          filterByPercent();
+          filterByName($(this).val());
+        });
+        
+        $("#main").tablesorter(); 
+      });
+    </script>
+  </head>
+  <body>
+    <div id='big_total' class='miss'>70.8%</div>
+    
+    <h1>Coverage Report</h1>
+    
+    <div id='filters'>
+      Filter:
+      <input type='text' id='filter_by_name'>
+      
+      Code Coverage Threshold:
+      <select id='filter_by_percent'>
+        <option value='0'>Show All</option>
+        <option value='1'><= 10% Coverage</option>
+        <option value='2'><= 20% Coverage</option>
+        <option value='3'><= 30% Coverage</option>
+        <option value='4'><= 40% Coverage</option>
+        <option value='5'><= 50% Coverage</option>
+        <option value='6'><= 60% Coverage</option>
+        <option value='7'><= 70% Coverage</option>
+        <option value='8'><= 80% Coverage</option>
+        <option value='9'><= 90% Coverage</option>
+        <option value='10'>< 100% Coverage</option>
+        <option value='100'>= 100% Coverage</option>
+      </select>
+    </div>
+
+    <table cellpadding='0' cellspacing='1'>
+      <tr>
+        <th>Legend</th>
+      </tr>
+      <tr>
+        
+        <td class='hit'>This file was tested 100%!</td>
+      </tr>
+      <tr>
+        <td class='near'>This file was tested >90%!</td>
+      </tr>
+      <tr>
+        <td class='miss'>This file was not tested nearly enough!</td>
+      </tr>
+    </table>
+    
+    <div>&nbsp;</div>
+
+    <table cellpadding="0" cellspacing='1' id='main'>
+      <thead>
+        <tr class='header'>
+          <th>File</th>
+          <th>Lines</th>
+          <th>Lines Of Code</th>
+          <th>Untested Lines of Code</th>
+          <th>Tested %</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        
+          <tr class='row hit 10' id='app/controllers/application_controller.rb'>
+            <td>
+              <a href="app/controllers/application_controller.rb.html">app/controllers/application_controller.rb</a>
+            </td>
+            <td>3</td>
+            <td>2</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row miss 3' id='app/controllers/articles_controller.rb'>
+            <td>
+              <a href="app/controllers/articles_controller.rb.html">app/controllers/articles_controller.rb</a>
+            </td>
+            <td>44</td>
+            <td>26</td>
+            <td>18</td>
+            <td>30.8%</td>
+          </tr>
+        
+          <tr class='row miss 2' id='app/controllers/comments_controller.rb'>
+            <td>
+              <a href="app/controllers/comments_controller.rb.html">app/controllers/comments_controller.rb</a>
+            </td>
+            <td>9</td>
+            <td>7</td>
+            <td>5</td>
+            <td>28.6%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/helpers/application_helper.rb'>
+            <td>
+              <a href="app/helpers/application_helper.rb.html">app/helpers/application_helper.rb</a>
+            </td>
+            <td>3</td>
+            <td>1</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row miss 4' id='app/helpers/icons_helper.rb'>
+            <td>
+              <a href="app/helpers/icons_helper.rb.html">app/helpers/icons_helper.rb</a>
+            </td>
+            <td>15</td>
+            <td>7</td>
+            <td>4</td>
+            <td>42.9%</td>
+          </tr>
+        
+          <tr class='row miss 4' id='app/helpers/tags_helper.rb'>
+            <td>
+              <a href="app/helpers/tags_helper.rb.html">app/helpers/tags_helper.rb</a>
+            </td>
+            <td>23</td>
+            <td>10</td>
+            <td>6</td>
+            <td>40.0%</td>
+          </tr>
+        
+          <tr class='row miss 5' id='app/models/article.rb'>
+            <td>
+              <a href="app/models/article.rb.html">app/models/article.rb</a>
+            </td>
+            <td>39</td>
+            <td>23</td>
+            <td>10</td>
+            <td>56.5%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/models/author.rb'>
+            <td>
+              <a href="app/models/author.rb.html">app/models/author.rb</a>
+            </td>
+            <td>2</td>
+            <td>1</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/models/comment.rb'>
+            <td>
+              <a href="app/models/comment.rb.html">app/models/comment.rb</a>
+            </td>
+            <td>5</td>
+            <td>3</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row miss 8' id='app/models/tag.rb'>
+            <td>
+              <a href="app/models/tag.rb.html">app/models/tag.rb</a>
+            </td>
+            <td>8</td>
+            <td>5</td>
+            <td>1</td>
+            <td>80.0%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/models/tagging.rb'>
+            <td>
+              <a href="app/models/tagging.rb.html">app/models/tagging.rb</a>
+            </td>
+            <td>7</td>
+            <td>4</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+      </tbody>
+      
+      <tr class='header'>
+        <th>Total</th>
+        <th>158</th>
+        <th>89</th>
+        <th>44</th>
+        <th>70.8%</th>
+      </tr>
+    </table>
+    <p>Generated on: 2011-09-27 14:59:42 +0100</p>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+{"churn":{"changes":[{"file_path":"public/stylesheets/screen.css","times_changed":5},{"file_path":"public/sass/screen.scss","times_changed":4}],"class_churn":[],"method_churn":[],"changed_files":["app/views/articles/show.html.erb"],"changed_classes":[],"changed_methods":[]}}

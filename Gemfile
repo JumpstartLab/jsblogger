@@ -8,8 +8,12 @@ group :development, :test do
   # Testing:
   gem 'rspec-rails'
   # gem 'capybara'
-  # gem 'faker'
-  # gem 'fabrication'  
+  gem 'faker'
+  gem 'fabrication' 
+  gem "cover_me"
+  gem "metric_fu" 
+  gem "fattr"
+  gem "arrayfields"
 
   # Styling:
   gem 'compass', '0.11.5'
