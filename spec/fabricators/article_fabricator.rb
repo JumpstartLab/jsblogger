@@ -1,5 +1,5 @@
 Fabricator(:article) do
-  title { Faker::Lorem.sentence + sequence(:title, 999).to_s }
+  title { Faker::Lorem.sentence }
   body { Faker::Lorem.paragraphs(3).join("\n") }
 end
 

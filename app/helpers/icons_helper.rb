@@ -10,6 +10,7 @@ module IconsHelper
     link_to image_tag(delete_icon_filename) + link_text,
             polymorphic_path(object),
             :method => :delete,
-            :confirm => "Delete '#{object}'?"
+            :confirm => "Delete '#{object}'?",
+            :id => dom_id(object, :delete)
   end
 end
