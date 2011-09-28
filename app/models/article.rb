@@ -2,7 +2,7 @@ class Article < ActiveRecord::Base
   validates :title, :presence => true, :uniqueness => true
   validates :body, :presence => true
 
-  has_many :comments
+  has_many :comments, :as => :subject
   has_many :taggings
   has_many :tags, :through => :taggings
 
@@ -35,5 +35,13 @@ class Article < ActiveRecord::Base
       tag = Tag.find_by_name(params[:tag])
       [tag.articles, tag]
     end
+  end
+  
+  def to_leaf
+    title
+  end
+  
+  def to_tree
+    [to_leaf, self.comments.collect{|c| c.to_tree}].join("\n")
   end
 end
