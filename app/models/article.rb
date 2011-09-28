@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+  attr_accessible :title, :tag_list, :body
+    
   validates :title, :presence => true, :uniqueness => true
   validates :body, :presence => true
 

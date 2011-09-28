@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
+    audit "Displaying article #{@article.inspect}"
   end
 
   def index
@@ -8,15 +9,20 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    audit "Displaying the form"
     @article = Article.new
   end
 
   def create
+    audit "Processing form data"
     @article = Article.new(params[:article])
+    audit "Resulting Article: #{@article.inspect}"
     if @article.save
+      audit "Save succeeded"
       flash[:notice] = "Article was created."
       redirect_to articles_path
     else
+      audit "Save failed"
       render :new
     end
   end
